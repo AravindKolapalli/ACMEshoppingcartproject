@@ -1,0 +1,34 @@
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: 123
+    driverClassName: org.h2.Driver
+
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop #update
+  h2:
+    console.enabled: true
+
+#select b.cart_id, a.customer_id, b.product_id_list from cart as a, cart_product_id_list as b where a.id=b.cart_id and a.customer_id='aman'
+
+
+#spring:
+#  datasource:
+#    driverClassName: 'com.mysql.cj.jdbc.Driver'
+#    username: 'root'
+#    password: 'root'
+#    url: 'jdbc:mysql://localhost:3306/HardwareShop'
+#
+#    ## now the hibernate is a tool which supports the ORM same like spring boot jpa
+#    ## hibernate requires a dialect to generate sql queries ||| for any database we need to dialect the hibernate
+#    ## here we are dialecting mysql database.
+#
+#    jpa:
+#    hibernate.ddl-auto: 'update'
+#    properties.hibernate.dialect: 'org.hibernate.dialect.MySQLInnoDBDialect'
+#    show-sql: 'true'
+
