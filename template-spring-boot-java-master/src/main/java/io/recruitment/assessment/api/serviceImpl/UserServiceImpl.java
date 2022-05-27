@@ -34,10 +34,10 @@ public class UserServiceImpl implements UserService {
             currUser = (User) users.get(0);
             String type = currUser.getUserType();
             if(type.equals("Admin")){
-                isAdminLoggedIn =true;
-                return "admin logged in successfully";
+                isAdminLoggedIn = true;
+                return "Admin logged in successfully";
             } else if(type.equals("Customer")){
-                isAdminLoggedIn=false;
+                isAdminLoggedIn = false;
                 return "customer logged in successfully";
             }
             return "Welcome "+currUser.getFirstName();

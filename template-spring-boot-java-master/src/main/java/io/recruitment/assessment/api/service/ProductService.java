@@ -10,9 +10,11 @@ public interface ProductService {
 
     List<Products> getAllProducts();
 
-    String updateProducts(Products products, boolean isAdminLoggedIn);
+    String addProducts(Products products);
 
-    String deleteProduct(Integer productId,boolean isAdminLoggedIn);
+    String updateProducts(Products products);
+
+    String deleteProduct(Integer productId);
 
     List<Products> search(String keyword);
 

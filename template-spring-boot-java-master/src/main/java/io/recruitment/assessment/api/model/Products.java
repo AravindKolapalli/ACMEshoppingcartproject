@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Products  {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer productId;
     private String productName;
     private int productPrice;
@@ -46,6 +46,4 @@ public class Products  {
         this.productCategory = productCategory;
     }
 
-//    public void addAttribute(String listProducts, List<Products> listProducts1) {
-//    }
 }

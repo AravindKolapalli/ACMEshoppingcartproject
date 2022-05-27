@@ -7,7 +7,7 @@ import java.util.List;
 @Table(name = "Cart")
 public class Cart {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private int id;
     private String customerId;
     @ElementCollection(targetClass=Integer.class)

@@ -1,6 +1,7 @@
 package io.recruitment.assessment.api.controllers;
 
 import io.recruitment.assessment.api.DAO.CartRepository;
+import io.recruitment.assessment.api.service.CartService;
 import io.recruitment.assessment.api.serviceImpl.CartServiceImpl;
 import io.recruitment.assessment.api.model.Cart;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +18,12 @@ public class CartController {
     @Autowired
     private CartServiceImpl cartServiceImpl;
 
+    @Autowired
+    private CartService cartService;
+
     @PostMapping("/addCart")
-    public ResponseEntity addCart(@RequestBody Cart cart){
-        return ResponseEntity.ok().body(this.cartRepository.save(cart));
+    public ResponseEntity<String> addCart(@RequestBody Cart cart){
+        return ResponseEntity.ok().body(this.cartService.addCart(cart));
     }
 
     @PostMapping("/createSummary")

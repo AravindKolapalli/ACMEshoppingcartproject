@@ -22,8 +22,8 @@ public class ProductsController {
 
 
     @PostMapping("/addProducts")
-    public ResponseEntity<Products> addProduct(@RequestBody Products products) {
-        return ResponseEntity.ok().body(this.productRepository.save(products));
+    public ResponseEntity<String> addProduct(@RequestBody Products products) {
+        return ResponseEntity.ok().body(this.productService.addProducts(products));
     }
 
     @GetMapping("/getAllProducts")
@@ -32,14 +32,13 @@ public class ProductsController {
     }
 
     @PutMapping("/updateProducts")
-    public ResponseEntity<String> updateProducts(@RequestBody Products products, @RequestParam boolean isAdminLoggedIn) {
-        return ResponseEntity.ok().body(this.productService.updateProducts(products, isAdminLoggedIn));
+    public ResponseEntity<String> updateProducts(@RequestBody Products products) {
+        return ResponseEntity.ok().body(this.productService.updateProducts(products));
     }
 
     @GetMapping("/deleteProduct")
-    public String deleteProductById(@RequestParam Integer productId, @RequestParam boolean isAdminLoggedIn) {
-        productService.deleteProduct(productId, isAdminLoggedIn);
-        return "deleted successfully";
+    public String deleteProductById(@RequestParam Integer productId) {
+        return productService.deleteProduct(productId);
     }
 
 
